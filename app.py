@@ -6,8 +6,13 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load trained model
-rf = joblib.load("rfr_model.pkl")
+#Load trained model
+@st.cache_resource
+def load_model():
+    return joblib.load("rfr_model.pkl")
+
+rf = load_model()
+
 
 st.set_page_config(page_title="Smart Home Energy Predictor", page_icon="⚡", layout="wide")
 
