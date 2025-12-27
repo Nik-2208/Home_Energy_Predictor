@@ -89,7 +89,14 @@ if st.button("Predict Energy Consumption ⚡"):
 st.write("## Feature Importance")
 importances = pd.Series(rf.feature_importances_, index=X_cols).sort_values(ascending=False)
 fig, ax = plt.subplots(figsize=(12,6))
-sns.barplot(x=importances.values, y=importances.index, palette="viridis", ax=ax)
+sns.barplot(
+    x=importances.values,
+    y=importances.index,
+    hue=importances.index,
+    palette="viridis",
+    legend=False,
+    ax=ax
+)
 ax.set_title("Feature Importance")
 st.pyplot(fig)
 
