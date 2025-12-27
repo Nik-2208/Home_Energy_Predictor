@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load trained model
-rf = joblib.load(r"C:\Users\nikhi\OneDrive\Desktop\AI and ML\ML Projects\Energy_Consumption_Predictor\rfr_model.pkl")
+rf = joblib.load("rfr_model.pkl")
 
 st.set_page_config(page_title="Smart Home Energy Predictor", page_icon="⚡", layout="wide")
 
